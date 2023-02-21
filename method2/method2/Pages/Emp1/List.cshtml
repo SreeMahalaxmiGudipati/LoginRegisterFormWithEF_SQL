@@ -1,0 +1,43 @@
+﻿@page
+@model method2.Pages.Emp1.ListModel
+@{
+    ViewData["Title"] = "Details";
+}
+<h1>Employees Details</h1>
+
+
+@if(Model.Employees1!=null && Model.Employees1.Any())
+{
+<table class="table">
+    <thead>
+    <tr>
+          <th>ID</th>
+            <th>    Name</th>
+             <th>   Contact No</th>
+            <th>    Password</th>
+    </tr>
+    </thead>
+
+    <tbody>
+        @foreach(var employee1 in Model.Employees1)
+        {
+            <tr>
+                    <td>@employee1.Id</td>
+                <td>@employee1.Name</td>
+                <td>@employee1.PhoneNo</td>
+                <td>@employee1.Password</td>
+                <td>
+                    <a href="/Emp1/edit18/@employee1.Id" class="btn btn-dark"> Edit Profile</a>
+                </td>
+            </tr>
+          
+        }
+    </tbody>
+
+</table>
+}
+
+else{
+    <h1>@Model.Employees1</h1>
+    <h3>No Employees Found!!</h3>
+}

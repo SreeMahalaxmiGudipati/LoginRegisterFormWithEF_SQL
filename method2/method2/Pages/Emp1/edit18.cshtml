@@ -1,0 +1,57 @@
+﻿@page "{Id:int}"
+@model method2.Pages.Emp1.edit18Model
+@{
+    var message = ViewData["Message"]?.ToString();
+}
+@*<h1>Heyy,I'm edit page</h1>*@
+
+<h1>Edit Profile</h1>
+<form method="post">
+
+    <br />
+    @if (!string.IsNullOrWhiteSpace(message))
+    {
+        <div class="alert alert-success" role="alert">
+            @message
+        </div>
+    }
+
+    <table>
+        <tr>
+            <td>ID</td>
+            <td>
+                <input asp-for="EditEmployeeViewModel.Id" readonly />
+            </td>
+        </tr>
+        <tr>
+            <td>UserName</td>
+            <td>
+                <input asp-for="EditEmployeeViewModel.Name" />
+            </td>
+        </tr>
+
+        <tr>
+            <td>Contact No</td>
+            <td>
+                <input asp-for="EditEmployeeViewModel.PhoneNo" />
+            </td>
+        </tr>
+
+        <tr>
+            <td>Password</td>
+            <td>
+                <input asp-for="EditEmployeeViewModel.Password" readonly />
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>
+                <input type="submit" value="UPDATE" />
+
+                <br />
+                <a asp-page="/Emp1/Login1">Login</a><br />
+                <a asp-page="/Emp1/List">View all details</a>
+            </td>
+        </tr>
+    </table>
+</form>

@@ -1,0 +1,12 @@
+﻿@page
+@model method2.Pages.Emp1.welcome11Model
+@{
+    ViewData["Title"] = "Welcome";
+}
+<h1>Welcome!!</h1>
+<br />
+Welcome @HttpContext.Session.GetString("username")
+<br />
+
+<a asp-page="/Emp1/Login1" asp-page-handler="logout">Logout</a>
+<a asp-page="/Emp1/Profile1" >Profile</a>

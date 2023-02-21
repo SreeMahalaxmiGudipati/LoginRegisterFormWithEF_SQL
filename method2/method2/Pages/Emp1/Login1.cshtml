@@ -1,0 +1,33 @@
+﻿@page
+@model method2.Pages.Emp1.Login1Model
+@{
+    ViewData["Title"] = "Login";
+}
+<h3>Sign In</h3>
+@Model.Msg
+<form method="post" >
+    <table>
+        <tr>
+            <td>UserName</td>
+            <td>
+                <input asp-for="@Model.emp.Name" />
+            </td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td>
+                <input type="password" asp-for="@Model.emp.Password" />
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>
+                <input type="submit" />
+                <br />
+                <a asp-page="/Emp1/Add">Register</a>
+
+
+            </td>
+        </tr>
+    </table>
+</form>

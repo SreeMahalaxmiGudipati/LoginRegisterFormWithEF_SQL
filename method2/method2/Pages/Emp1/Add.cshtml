@@ -1,0 +1,48 @@
+﻿@page
+@model method2.Pages.Emp1.AddModel
+@{
+    ViewData["Title"] = "Register";
+    var message = ViewData["Message"]?.ToString();
+}
+<h1>Add New Employee</h1>
+
+<form method="post">
+    @if(!string.IsNullOrWhiteSpace(message))
+    {
+        <div class="alert alert success" role="alert">
+            @message</div>
+    }
+    <br />
+ 
+    <table>
+        <tr>
+            <td>UserName</td>
+            <td>
+                <input asp-for="AddEmployeeRequest.Name" />
+            </td>
+        </tr>
+        
+        <tr>
+            <td>Contact No</td>
+            <td>
+                <input asp-for="AddEmployeeRequest.PhoneNo" />
+            </td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td>
+                <input type="password" asp-for="AddEmployeeRequest.Password" />
+            </td>
+        </tr>
+    
+        <tr>
+            <td>&nbsp;</td>
+            <td>
+                <input type="submit" value="SAVE"  />
+
+                <br />
+               <a asp-page="/Emp1/Login1">Login</a>
+            </td>
+        </tr>
+    </table>
+    </form>
